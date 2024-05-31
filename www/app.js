@@ -19,7 +19,8 @@ taskformElement.addEventListener('submit', async (e) => {
     e.preventDefault();
     const newTaskInput = taskformElement.elements.new_task_input;
 
-    const response = await fetch('https://static-app-backend.azurewebsites.net/api/tasks?', {
+    // const response = await fetch('https://static-app-backend.azurewebsites.net/api/tasks?', {
+    const response = await fetch('/api/tasks', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -36,7 +37,8 @@ taskformElement.addEventListener('submit', async (e) => {
 });
 
 async function getTasks() {
-    const response = await fetch('https://static-app-backend.azurewebsites.net/api/tasks?');
+    // const response = await fetch('https://static-app-backend.azurewebsites.net/api/tasks?');
+    const response = await fetch('/api/tasks');
     const tasks = await response.json();
     console.log(tasks);
 
