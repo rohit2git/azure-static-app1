@@ -4,7 +4,10 @@ const empty = document.querySelector('#empty');
 const usernameElement = document.querySelector('#username');
 
 async function getUser() {
-    // TODO
+    const response = await fetch('/.auth/me');
+    const payload = await response.json();
+    const { clientPrincipal } = payload;
+    usernameElement.textContent = clientPrincipal.userDetails;
 }
 
 async function updateTask() {
