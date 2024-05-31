@@ -21,7 +21,7 @@ taskformElement.addEventListener('submit', async (e) => {
 
     // const response = await fetch('https://static-app-backend.azurewebsites.net/api/tasks?', {
     const response = await fetch('/api/tasks', {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
