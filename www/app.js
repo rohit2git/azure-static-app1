@@ -36,7 +36,7 @@ taskformElement.addEventListener('submit', async (e) => {
 });
 
 async function getTasks() {
-    const response = await fetch('/api/tasks');
+    const response = await fetch('https://static-app-backend.azurewebsites.net/api/tasks?');
     const tasks = await response.json();
     console.log(tasks);
 
